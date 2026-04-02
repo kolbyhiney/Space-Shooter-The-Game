@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wps0hpecyxnr"]
+
+[ext_resource type="Texture2D" uid="uid://gudccli02m0x" path="res://PNG/playerShip1_orange.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://okioub41sr24" path="res://scenes/player.gd" id="1_g2els"]
+
+[node name="Player" type="CharacterBody2D" unique_id=159813217]
+script = ExtResource("1_g2els")
+speed = 200
+
+[node name="PlayerImage" type="Sprite2D" parent="." unique_id=1445398467]
+position = Vector2(0, -1)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2046134971]
+polygon = PackedVector2Array(8, -39, 11, -14, 33, 0, 51, -10, 45, 23, 8, 35, -9, 36, -47, 22, -50, -13, -35, 1, -13, -13, -9, -39)

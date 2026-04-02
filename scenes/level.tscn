@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cbyp1xwa5d3e1"]
+
+[ext_resource type="Script" uid="uid://dyys16d60e4g2" path="res://scenes/level.gd" id="1_mx8sn"]
+[ext_resource type="Texture2D" uid="uid://cnl5nmeq6ga2l" path="res://Backgrounds/darkPurple.png" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://cyqqgordmh7pa" path="res://scenes/meteor.tscn" id="3_ppgk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
+size = Vector2(191.5, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
+size = Vector2(1748, 200)
+
+[node name="Level" type="Node2D" unique_id=335847039]
+script = ExtResource("1_mx8sn")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=409646869]
+position = Vector2(607.9999, 380.87698)
+scale = Vector2(6.2656245, 3.1806483)
+texture = ExtResource("1_w8frs")
+
+[node name="Player" parent="." unique_id=1732452376 instance=ExtResource("2_mx8sn")]
+position = Vector2(164, 251)
+
+[node name="Meteor" parent="." unique_id=1407407996 instance=ExtResource("3_ppgk2")]
+position = Vector2(663, 149)
+
+[node name="Borders" type="Node2D" parent="." unique_id=495664382]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=49886121]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1442584018]
+position = Vector2(1374, 365)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=628431449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=1897798406]
+position = Vector2(-100, 365)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=1108075647]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=2143853017]
+position = Vector2(646, -101)
+shape = SubResource("RectangleShape2D_mx8sn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=46947904]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=796604420]
+position = Vector2(648, 825)
+shape = SubResource("RectangleShape2D_mx8sn")
+
+[node name="Timer" type="Timer" parent="." unique_id=869972945]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
