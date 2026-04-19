@@ -1,4 +1,4 @@
-🚀 Space Shooter – Godot Engine Project A space shooter game built using the Godot Engine featuring player movement, laser mechanics, dynamic obstacle spawning, and collision-based gameplay interactions. This project demonstrates structured scene architecture and real-time gameplay scripting using GDScript.
+🚀 Space Shooter Godot Engine Project A space shooter game built using the Godot Engine featuring player movement, laser mechanics, dynamic obstacle spawning, and collision-based gameplay interactions. This project demonstrates structured scene architecture and real-time gameplay scripting using GDScript.
 
 🎮 Features Player-controlled spaceship movement Laser shooting system Dynamic meteor spawning using timers Collision detection between player, meteors, and lasers Modular scene structure Real-time gameplay interaction logic
 
